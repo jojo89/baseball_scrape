@@ -1,0 +1,20 @@
+body{
+  color: black;
+  text-align: center;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+}
+
+a{
+  color: rgb(45, 159, 229);
+  text-decoration: none;
+}
+
+h1{
+  font-size: 65px;
+}
+
+ul
+{
+    list-style-type: none;
+}
+

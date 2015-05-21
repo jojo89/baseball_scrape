@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/application.css">
+
+
+<h1><a href="/">Baseball Games</a></h1>
+<p>
+<%= @game.start_time.strftime("%A, %B %d %I:%M") %>
+</p>
+<p>
+  <img src=<%= @game.home_image %>><b> <%= @game.home_team %></b>
+  vs. 
+  <img src=<%= @game.away_image %>><b> <%= @game.away_team %></b>
+</p>
+<p>
+  <%= @game.tickets_available %> Tickets Left
+</p>

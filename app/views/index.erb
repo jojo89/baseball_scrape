@@ -1,0 +1,10 @@
+
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/application.css">
+
+<h1><a href="/">Baseball Games</a></h1>
+<ul>
+  <% @games.each do |game| %>
+  <li><a href=/game/<%= game.id%>><%= game.away_team + " vs " + game.home_team + " start time- " + game.start_time.strftime("%A, %B %d %I:%M")%></li>
+  <% end %>
+</ul>
