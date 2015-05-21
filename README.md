@@ -1,41 +1,46 @@
-# Ryan's First Sinatra CRUD app
+# Baseball Scraper
 
-This is an app that will allow you to store, edit and manage contacts.
+### Dependecies
+Mongodb
 
-## Getting Started
 
-Clone the app
+### Development
 
-    $ git clone https://github.com/ryanbriones/dbc-sinatra-crud-example.git
-    $ cd dbc-sinatra-crud-example
+from the directory you would like to store the project.
 
-Install bundled gems
+```
+$ git@github.com:jojo89/baseball_scrape.git
+```
 
-    $ bundle install
+```
+$ cd baseball_scrape
+```
 
-Setup your database
+```
+$ bundle install
+```
 
-    $ bundle exec rake db:create
-    $ bundle exec rake db:migrate
+```
+$ shotgun
+```
+ 
+ Your Application will be available at localhost:9393
 
-*NOTE: Because of the way the sinatra skeleton is built, you may experience an issue with `rake db:create`. This is because Mac OS X includes some postgresql utilities by default that don't work well with the postgresql installation you've done. If this is the case, if this is the case, you'll want to edit `Rakefile` line 92 which looks like*
+### Scraping 
 
-    exec("createdb #{DB_NAME}")
+run 
 
-*To be something more like:*
+```
+bundle exec rake fetch_games  DATE=date_to_scrape(yyyymmdd)
+```
+this will scrape mlb.com for all baseball games on the given date
 
-    exec("/usr/local/bin/createdb #{DB_NAME}")
+### production
 
-*`/usr/local/bin` is where [Homebrew](http://brew.sh/) puts things by default.*
+project is hosted at https://sleepy-dusk-5552.herokuapp.com/
 
-Run your application using `shotgun`. `shotgun` is installed as a result of `bundle install`
 
-    $ shotgun
+### Notes 
+  This application scrapes Baseball game information from the Major League Baseball website using Nokogiri to parse the html. It then stores the data in a very simple Mongo Table. When the user visits the site it displays all the games from the games table. When a user clicks on a game it then directs to that resources "show" page and gives them more information about the game.
 
-Profit! http://localhost:9393/
 
-## Authors
-
-For complaints... or praise...
-
-Ryan Briones <ryan@devbootcamp.com>
